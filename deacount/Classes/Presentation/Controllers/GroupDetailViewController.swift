@@ -173,7 +173,7 @@ class GroupDetailViewController: UIViewController, LoginViewControllerDelegate, 
     private func setupCollectionViewBalances() {
         
         let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
-        layout.sectionInset = UIEdgeInsets(top: 55, left: 0, bottom: 50, right: 0)
+        layout.sectionInset = UIEdgeInsets(top: 55+64, left: 0, bottom: 50, right: 0)
         layout.minimumLineSpacing = 2
         layout.itemSize = CGSize(width: self.view.frame.size.width, height: 125)
         

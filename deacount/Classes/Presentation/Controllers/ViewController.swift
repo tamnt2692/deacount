@@ -47,8 +47,6 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         layout.itemSize = CGSize(width: self.view.frame.size.width, height: 73)
         
         var collectionViewFrame:CGRect = self.view.frame;
-        collectionViewFrame.size.height -= topbarHeight
-        collectionViewFrame.origin.y += topbarHeight
         
         let collectionView:UICollectionView = UICollectionView(frame: collectionViewFrame, collectionViewLayout: layout)
         collectionView.dataSource = self

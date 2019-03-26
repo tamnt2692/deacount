@@ -46,8 +46,6 @@ class WhoPayViewController: UIViewController, UICollectionViewDelegate, UICollec
         layout.itemSize = CGSize(width: self.view.frame.size.width, height: 45)
         
         var collectionViewFrame:CGRect = self.view.frame;
-        collectionViewFrame.size.height -= topbarHeight
-        collectionViewFrame.origin.y += topbarHeight
         
         let collectionView:UICollectionView = UICollectionView(frame: collectionViewFrame, collectionViewLayout: layout)
         collectionView.dataSource = self
