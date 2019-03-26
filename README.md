@@ -3,6 +3,7 @@
 # Solution : double entry accounting - luca pacioli (1447 –  1517)
 
 iOS Assignment
+coredata, unit test
 
 ![Screenshot](SS1.png)
 ![Screenshot](SS2.png)
