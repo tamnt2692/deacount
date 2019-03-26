@@ -107,10 +107,7 @@ class DataManager: NSObject, NSCoding {
         self.groups[id] = group
         
         self.notifyDidCreateGroup(_group: group)
-        
-        DispatchQueue.global(qos: .utility).async {
-            _ = PersistentManager.shared.addGroupToDB(_group: group)
-        }
+        _ = PersistentManager.shared.addGroupToDB(_group: group)
     }
     
     public func add(_transactions: Dictionary<String, Transaction>, _records:Dictionary<String, Record>) {
@@ -126,10 +123,8 @@ class DataManager: NSObject, NSCoding {
         self.notifyDidAddTransactions(_transactions: _transactions)
         self.notifyDidAddRecords(_records: records)
         // save db
-        DispatchQueue.global(qos: .utility).async {
-            _ = PersistentManager.shared.addTransactionsToDB(_transactions: _transactions)
-            _ = PersistentManager.shared.addRecordsToDB(_records: _records)
-        }
+        _ = PersistentManager.shared.addTransactionsToDB(_transactions: _transactions)
+        _ = PersistentManager.shared.addRecordsToDB(_records: _records)
     }
     
     public func update(_group: Group, _users: Array<User>) {
@@ -137,10 +132,8 @@ class DataManager: NSObject, NSCoding {
         self.notifyDidUpdateGroup(_group: _group)
         self.notifyDidUpdateUsers(_users: _users)
         // save db
-        DispatchQueue.global(qos: .utility).async {
-            _ = PersistentManager.shared.updateGroupsToDB(_groups: [_group])
-            _ = PersistentManager.shared.updateUsersToDB(_users: _users)
-        }
+        _ = PersistentManager.shared.updateGroupsToDB(_groups: [_group])
+        _ = PersistentManager.shared.updateUsersToDB(_users: _users)
     }
     
     // MARK: notify
